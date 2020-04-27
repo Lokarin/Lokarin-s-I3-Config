@@ -19,4 +19,4 @@
   - Theme: Mint-Y-Dark-Orange.
  
  
- Important: the files are using MY paths, if you are going to use this config, remember to change them!
+ **Important: the files are using MY paths, if you are going to use this config, remember to change them!**
