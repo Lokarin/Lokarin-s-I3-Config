@@ -6,7 +6,7 @@
 
 
 
-- Requirements
+# - Requirements
   - i3-gaps;
   - i3lock;
   - i3blocks;
