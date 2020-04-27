@@ -19,4 +19,6 @@
   - Theme: Mint-Y-Dark-Orange.
  
  
- **Important: the files are using MY paths, if you are going to use this config, remember to change them!**
+**Important:**
+  **- There are some applications that are about to start with I3, make sure you have them or remove the lines in the config that start those applications.**
+  **- The config is configured with MY paths, don't forget to change them!**
