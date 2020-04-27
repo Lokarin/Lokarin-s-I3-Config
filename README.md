@@ -10,6 +10,7 @@
   - i3-gaps;
   - i3lock;
   - i3blocks;
+  - pavucontrol;
   - Compton;
   - Rofi (Theme: arthur2.rasi);
   
