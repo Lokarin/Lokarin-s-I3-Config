@@ -1,5 +1,5 @@
 # Lokarin-s-I3-Config
-Minhas configurações do I3
+Minhas configurações do I3 para o Linux Mint
 
 ![](Screenshots/WMAtual.png)
 
