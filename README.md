@@ -1,8 +1,5 @@
 # My I3 settings for Linux Mint
 
-![](Screenshots/WMAtual.png)
-
-![](Screenshots/WMAtual2.png)
 
 
 
