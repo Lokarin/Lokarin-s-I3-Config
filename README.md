@@ -1,6 +1,12 @@
 # Lokarin-s-I3-Config
 Minhas configurações do I3
 
+![](Screenshots/WMAtual.png)
+
+![](Screenshots/WMAtual2.png)
+
+
+
 - Requirements
   - i3-gaps
   - i3lock
