@@ -1,5 +1,4 @@
-# Lokarin-s-I3-Config
-Minhas configurações do I3 para o Linux Mint
+# My I3 settings for Linux Mint
 
 ![](Screenshots/WMAtual.png)
 
@@ -19,4 +18,4 @@ Minhas configurações do I3 para o Linux Mint
   - Theme: Mint-Y-Dark-Orange.
  
  
-  
+ Important: the files are using MY paths, if you are going to use this config, remember to change them!
