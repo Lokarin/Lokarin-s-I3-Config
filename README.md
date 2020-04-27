@@ -10,6 +10,7 @@ Minhas configurações do I3 para o Linux Mint
 - Requirements
   - i3-gaps;
   - i3lock;
+  - i3blocks;
   - Compton;
   - Rofi (Theme: arthur2.rasi);
   
