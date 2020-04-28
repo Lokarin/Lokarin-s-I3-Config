@@ -235,4 +235,6 @@ new_window 1pixel
 exec brave-browser
 exec mintupdate
 exec_always compton -f
+
+# Set WallPaper
 exec_always feh --bg-scale Imagens/WallPapers/WallPaper.jpg
