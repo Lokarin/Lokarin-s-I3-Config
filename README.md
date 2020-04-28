@@ -1,8 +1,8 @@
 # My I3 settings for Linux Mint
 
-![](Screenshots/WMAtual5.png)
+![](Screenshots/WMAtual1.png)
 
-![](Screenshots/WMAtual6.png)
+![](Screenshots/WMAtual2.png)
 
 # - Requirements
   - i3-gaps;
