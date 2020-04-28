@@ -92,13 +92,13 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # set the name of workspaces
-set $workspace1 "1: Navegador" 
-set $workspace2 "2: Geral"
-set $workspace3 "3: Códigos"
-set $workspace4 "4: Música" 
-set $workspace5 "5: Terminais" 
-set $workspace6 "6: Discord" 
-set $workspace7 "7: ObsStudio" 
+set $workspace1 "1: Navegador " 
+set $workspace2 "2: Geral "
+set $workspace3 "3: Códigos "
+set $workspace4 "4: Música " 
+set $workspace5 "5: Terminais " 
+set $workspace6 "6: Discord " 
+set $workspace7 "7: ObsStudio " 
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -131,6 +131,7 @@ assign [class="Sublime_text"] $workspace3
 assign [class="discord"] $workspace6
 assign [class="obs"] $workspace7
 assign [class="MintUpdate.py"] $workspace5
+assign [class="Spotify"] $workspace4
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -234,4 +235,4 @@ new_window 1pixel
 exec brave-browser
 exec mintupdate
 exec_always compton -f
-exec_always feh --bg-scale Imagens/WallPapers/cristalabstratoazulescuro.jpg
+exec_always feh --bg-scale Imagens/WallPapers/WallPaper.jpg
