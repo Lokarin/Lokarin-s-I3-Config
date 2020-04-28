@@ -1,8 +1,8 @@
 # My I3 settings for Linux Mint
 
-![](Screenshots/WMAtual3.png)
+![](Screenshots/WMAtual5.png)
 
-![](Screenshots/WMAtual4.png)
+![](Screenshots/WMAtual6.png)
 
 # - Requirements
   - i3-gaps;
@@ -13,7 +13,7 @@
   - Rofi (Theme: arthur2.rasi);
   
   - Icons: [Vimix-icon-theme](https://www.gnome-look.org/s/Gnome/p/1273372);
-  - Font: [YosemiteSanFranciscoFont](https://github.com/supermarin/YosemiteSanFranciscoFont), Font Awesome;
+  - Fonts: [YosemiteSanFranciscoFont](https://github.com/supermarin/YosemiteSanFranciscoFont), Font Awesome;
   - Theme: Mint-Y-Dark-Orange.
  
  
