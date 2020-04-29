@@ -217,7 +217,7 @@ bindsym $mod+shift+n exec brave-browser
 bindsym $mod+shift+p exec gnome-screenshot
 
 # Rofi
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -theme arthur2
+bindsym $mod+d exec rofi -show drun -lines 3 -eh 2 -width 100 -padding 800 -theme arthur2
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 2 +3% #increase sound volume
