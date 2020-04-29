@@ -196,12 +196,14 @@ gaps outer 5
 # finds out, if available)
 bar {
         status_command i3blocks -c /home/lokarin/.i3/i3blocks.conf
+        i3bar_command i3bar --transparency
+        font pango:System San Francisco Display 10
         colors {
-		background $bg-color2
+		background #0a0a0a00
 	    	separator #028985
 		#                  border                          background         text
-		focused_workspace  $datails-color                  $bg-color2         $text-color
-		inactive_workspace $datails-color-inactive         $bg-color2         $inactive-text-color
+		focused_workspace  $datails-color                  #00000000         $text-color
+		inactive_workspace $datails-color-inactive         #00000000         $text-color
 		urgent_workspace   $urgent-bg-color                $urgent-bg-color   $text-color
 	}
 	position top
