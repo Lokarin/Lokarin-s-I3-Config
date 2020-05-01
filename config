@@ -99,6 +99,7 @@ set $workspace4 "4: Música "
 set $workspace5 "5: Terminais " 
 set $workspace6 "6: Discord " 
 set $workspace7 "7: ObsStudio " 
+set $workspace8 "8:Gimp "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -108,7 +109,7 @@ bindsym $mod+4 workspace $workspace4
 bindsym $mod+5 workspace $workspace5
 bindsym $mod+6 workspace $workspace6
 bindsym $mod+7 workspace $workspace7
-bindsym $mod+8 workspace 8
+bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
@@ -120,7 +121,7 @@ bindsym $mod+Shift+4 move container to workspace $workspace4
 bindsym $mod+Shift+5 move container to workspace $workspace5
 bindsym $mod+Shift+6 move container to workspace $workspace6
 bindsym $mod+Shift+7 move container to workspace $workspace7
-bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
@@ -132,6 +133,7 @@ assign [class="discord"] $workspace6
 assign [class="obs"] $workspace7
 assign [class="MintUpdate.py"] $workspace5
 assign [class="Spotify"] $workspace4
+assign [class="Gimp-2.8"] $workspace8
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -168,22 +170,22 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # standard colors
-set $bg-color 	         #000000
-set $bg-color2			 #343434
-set $datails-color		 #C57A00
-set $datails-color-inactive		 #046A67
-set $indicator-color	 #07B9B4
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676767
-set $urgent-bg-color     #C57A00
+set $bg-color 	         	#000000
+set $bg-color2			#343434
+set $datails-color		#C57A00
+set $datails-color-inactive	#046A67
+set $indicator-color	 	#07B9B4
+set $inactive-bg-color   	#2f343f
+set $text-color          	#f3f4f5
+set $inactive-text-color 	#676767
+set $urgent-bg-color     	#C57A00
 
 # window colors
-#                       border                         background         text                     indicator		      border
-client.focused          $datails-color                 $bg-color2         $text-color              $indicator-color       $datails-color      
-client.unfocused        $datails-color-inactive        $bg-color2         $inactive-text-color     $indicator-color		  $datails-color-inactive
-client.focused_inactive $datails-color-inactive        $bg-color2         $inactive-text-color     $indicator-color		  $datails-color-inactive
-client.urgent           $urgent-bg-color               $urgent-bg-color   $text-color              $indicator-color       $bg-color2
+#                       border                         background         text                     indicator		border
+client.focused          $datails-color                 $bg-color2         $text-color              $indicator-color     $datails-color      
+client.unfocused        $datails-color-inactive        $bg-color2         $inactive-text-color     $indicator-color	$datails-color-inactive
+client.focused_inactive $datails-color-inactive        $bg-color2         $inactive-text-color     $indicator-color  	$datails-color-inactive
+client.urgent           $urgent-bg-color               $urgent-bg-color   $text-color              $indicator-color     $bg-color2
 
 hide_edge_borders both
 
@@ -201,13 +203,16 @@ bar {
         colors {
 		background #0a0a0a00
 	    	separator #028985
-		#                  border                          background         text
+		#                  border                          background        text
 		focused_workspace  $datails-color                  #00000000         $text-color
 		inactive_workspace $datails-color-inactive         #00000000         $text-color
-		urgent_workspace   $urgent-bg-color                $urgent-bg-color   $text-color
-	}
+		urgent_workspace   $urgent-bg-color                $urgent-bg-color  $text-color
+		}
 	position top
 }
+
+# Thick Border
+bindsym $mod+y border pixel 2
 
 # lock screen
 bindsym $mod+shift+x exec i3lock
@@ -235,7 +240,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
   
 # Start With the system  
-new_window 1pixel
+new_window pixel 2
 exec brave-browser
 exec mintupdate
 exec_always compton -f
