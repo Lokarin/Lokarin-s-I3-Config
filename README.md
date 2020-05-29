@@ -1,4 +1,9 @@
 # Chameleon i3
+![](Screenshots/i3Camalleon.png)
+
+![](Screenshots/BrownAnime.png)
+
+![](Screenshots/GreyWater.png)
 
 # - Requirements
   - i3-gaps;
