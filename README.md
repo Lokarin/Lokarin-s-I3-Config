@@ -7,6 +7,7 @@
   - Compton;
   - dmenu;
   - st;
+  - sxiv;
   - Rofi;
   - Some of my Scripts.
   
