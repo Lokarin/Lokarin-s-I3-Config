@@ -6,6 +6,7 @@
   - pavucontrol;
   - Compton;
   - dmenu;
+  - st;
   - Rofi;
   - Some of my Scripts.
   
