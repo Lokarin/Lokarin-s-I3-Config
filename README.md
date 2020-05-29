@@ -8,6 +8,7 @@
 # - Requirements
   - i3-gaps;
   - i3blocks;
+  - pywal,
   - pavucontrol;
   - Compton;
   - dmenu;
