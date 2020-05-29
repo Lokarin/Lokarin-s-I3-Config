@@ -1,4 +1,4 @@
-# My I3 settings for Linux Mint
+# Chameleon i3
 
 # - Requirements
   - i3-gaps;
