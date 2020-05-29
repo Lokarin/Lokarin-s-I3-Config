@@ -9,12 +9,10 @@
   - st;
   - sxiv;
   - Rofi;
-  - Some of my Scripts.
-  
-
+  - Some of my Scripts;
   - Fonts: [YosemiteSanFranciscoFont](https://github.com/supermarin/YosemiteSanFranciscoFont), Font Awesome;
-  - Theme: CBlack 
-  - Icons: [Vimix Doder dark](https://www.gnome-look.org/content/show.php/Vimix+Dark?content=162556) 
+  - Theme: CBlack; 
+  - Icons: [Vimix Doder dark](https://www.gnome-look.org/content/show.php/Vimix+Dark?content=162556). 
  
 **Important:**
 
