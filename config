@@ -239,11 +239,17 @@ bindsym --release XF86AudioLowerVolume exec pactl set-sink-volume 1 -5% #decreas
 bindsym --release XF86AudioMute exec pactl set-sink-mute 1 toggle # mute sound
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-  
+#bindsym XF86AudioPlay exec playerctl play
+#bindsym XF86AudioPause exec playerctl pause
+#bindsym XF86AudioNext exec playerctl next
+#bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec cmus-remote -p
+bindsym shift+XF86AudioPause exec cmus-remote -u
+bindsym XF86AudioNext exec cmus-remote -n
+bindsym XF86AudioPrev exec cmus-remote -r 
+bindsym --release shift+XF86AudioRaiseVolume exec cmus-remote -v +5%
+bindsym --release shift+XF86AudioLowerVolume exec cmus-remote -v -5% 
+
 # Start With the system  
 new_window pixel 2
 #exec brave-browser
