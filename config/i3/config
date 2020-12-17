@@ -18,8 +18,8 @@ bindsym $mod+d exec ./bin/dmenuColors
 # Rofi
 bindsym $mod+p exec rofi -show drun  
 
-# Launch st
-bindsym $mod+Return exec st
+# Launch a Terminal
+bindsym $mod+Return exec alacritty
 
 # Launch pavucontrol
 bindsym $mod+shift+v exec pavucontrol
@@ -37,7 +37,7 @@ bindsym $mod+shift+f exec firefox
 bindsym $mod+shift+h exec gucharmap
 
 # Launch Cmus
-bindsym --release shift+XF86AudioMute exec st cmus 
+bindsym --release shift+XF86AudioMute exec alacritty -e cmusWal 
 
 # Launch Flameshot
 bindsym $mod+shift+p exec flameshot gui 
@@ -58,7 +58,7 @@ bindsym $mod+shift+x exec ./bin/simOuNao Reiniciar? reboot
 bindsym $mod+shift+b exec ./bin/simOuNao Desligar? poweroff
 
 # Open i3 config file
-bindsym $mod+shift+i exec st nvim ~/.config/i3/config 
+bindsym $mod+shift+i exec alacritty -e commandAndWal nvim ~/.config/i3/config 
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
