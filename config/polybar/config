@@ -32,9 +32,11 @@ primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color2:#222}
 alert = ${xrdb:color3:#222}
 
+[section/base]
+monitor = ${env:MONITOR:eDP1}
 ; BAR CONFIGURATION
-[bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
+[bar/main]
+inherit = section/base
 width = 99.1%
 height = 20
 offset-x = 8
@@ -70,13 +72,72 @@ font-5 = FontAwesome5Brands:style=Regular:size=10;1
 
 ; MODULES POSITIONS
 modules-left = i3 xwindow
-modules-right = cmus pulseaudio tasks espaco cpu memoria wlan eth calendario 
+modules-right = cmus pulseaudio tasks espaco cpu memoria bateria wlan eth calendario 
 ;modules-center = mpd
 
 ; TRAY
 tray-position = right
 tray-padding = 0 
 tray-background = ${colors.primary}
+
+; BAR RESTACK [OVERLAPING]
+;wm-restack = bspwm
+wm-restack = i3
+override-redirect = true
+
+; BAR ACTIONS
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/secondary]
+;monitor = ${env:MONITOR:HDMI-1}
+inherit = section/base
+width = 99.1%
+height = 20
+offset-x = 8
+offset-y = 6
+radius = 0.0
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+; UNDERLINES
+line-size = 2
+line-color = #f00
+
+; BORDER 
+border-size = 0 
+border-color = #00000000
+
+; PADDING
+padding-left = 0
+padding-right = 0
+
+; MARGIN
+module-margin-left = 1
+module-margin-right = 2
+
+; FONTS
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = FontAwesome5Free:style=Solid:size=10;1
+font-4 = FontAwesome5Free:style=Regular:size=10;1
+font-5 = FontAwesome5Brands:style=Regular:size=10;1
+
+; MODULES POSITIONS
+modules-left = i3 xwindow
+modules-right = cmus pulseaudio tasks espaco cpu memoria bateria wlan eth calendario 
+;modules-center = mpd
+
+; TRAY
+; tray-position = right
+; tray-padding = 0 
+; tray-background = ${colors.primary}
 
 ; BAR RESTACK [OVERLAPING]
 ;wm-restack = bspwm
@@ -197,6 +258,12 @@ interval = 5
 format-prefix = " Mem: "
 ;format-underline= ${colors.secondary}
 click-left = notify-send "$(ps axch -o cmd:15,%mem --sort=-%mem | head)" 
+
+[module/bateria]
+type = custom/script
+exec = . ~/Documentos/scripts/bateria.sh
+format-prefix = " Bat: "
+interval = 5
 
 [module/calendario]
 type = custom/script
