@@ -28,7 +28,7 @@ bindsym $mod+shift+a exec dolphin
 bindsym $mod+shift+f exec librewolf
 
 # Launch Cmus
-bindsym --release shift+XF86AudioMute exec alacritty -e ~/bin/cmusWal 
+bindsym shift+XF86AudioMute exec alacritty -e ~/bin/cmusWal 
 
 # Launch Flameshot
 bindsym $mod+shift+p exec flameshot gui 
@@ -38,7 +38,7 @@ bindsym $mod+shift+y exec ~/bin/downloadmp3
 
 # Launch noturno 
 bindsym $mod+shift+XF86MonBrightnessUp exec ~/bin/noturno 
-bindsym $mod+shift+F12 exec ~/bin/noturno 
+bindsym $mod+shift+F12 exec ~/bin/diaNoite 
 
 # Run setWal
 bindsym $mod+shift+s exec ./bin/setWal
@@ -49,11 +49,14 @@ bindsym $mod+shift+t exec ./Documentos/scripts/touhouSelect.sh
 # Run Browser Selector
 bindsym $mod+shift+n exec ~/bin/navegadores
 
-# Run simOuNao(Reboot)
-bindsym $mod+shift+x exec ./bin/simOuNao Reiniciar? reboot
+## Run simOuNao(Reboot)
+#bindsym $mod+shift+x exec ./bin/simOuNao Reiniciar? reboot
+#
+## Run simOuNao(Desligar)
+#bindsym $mod+shift+b exec ./bin/simOuNao Desligar? poweroff
 
-# Run simOuNao(Desligar)
-bindsym $mod+shift+b exec ./bin/simOuNao Desligar? poweroff
+# Run Logout
+bindsym $mod+shift+x exec ./bin/logout
 
 # Open i3 config file
 bindsym $mod+shift+i exec alacritty -e commandAndWal nvim ~/.config/i3/config 
@@ -245,7 +248,7 @@ bindsym $mod+shift+less move workspace to output left
 # Standard colors
 set $bg-color 	         	#000000
 set $bg-color2			#343434
-set_from_resource $datails-color i3wm.color6		#C57A00
+set_from_resource $datails-color i3wm.color1		#C57A00
 set_from_resource $datails-color-inactive i3wm.color1	#009EB8
 set $indicator-color	 	#07B9B4
 set $inactive-bg-color   	#2f343f
@@ -268,7 +271,7 @@ hide_edge_borders both
 # Gaps
 gaps inner 8
 gaps outer 0
-gaps top 25
+gaps top 34
 smart_borders on
 smart_borders no_gaps
 #smart_gaps on
@@ -425,7 +428,7 @@ new_window pixel 2
 new_float none
 
 # Start compositor
-exec_always picom --experimental-backends
+exec_always picom 
 
 # Start Dunst (Notifications)
 exec_always dunst 

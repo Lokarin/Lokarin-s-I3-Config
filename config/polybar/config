@@ -38,12 +38,13 @@ monitor = ${env:MONITOR:eDP1}
 [bar/main]
 inherit = section/base
 width = 99.1%
-height = 20
+height = 27
 offset-x = 8
-offset-y = 6
+offset-y = 8
 radius = 0.0
 fixed-center = true
-background = ${colors.background}
+;background = ${colors.background}
+background = #00111111 
 foreground = ${colors.foreground}
 
 ; UNDERLINES
@@ -63,17 +64,17 @@ module-margin-left = 1
 module-margin-right = 2
 
 ; FONTS
-font-0 = fixed:pixelsize=10;1
+font-0 = fixed:pixelsize=12;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-font-3 = FontAwesome5Free:style=Solid:size=10;1
-font-4 = FontAwesome5Free:style=Regular:size=10;1
-font-5 = FontAwesome5Brands:style=Regular:size=10;1
+font-2 = siji:pixelsize=12;1
+font-3 = Font Awesome 6 Free,Font Awesome 6 Free Regular:style=Regular:size=12;1
+font-4 = Font Awesome 6 Brands Regular:style=Regular:size=12;1
+font-5 = Font Awesome 6 Free Solid:style=Solid:size=12;1
 
 ; MODULES POSITIONS
-modules-left = i3 xwindow
-modules-right = cmus pulseaudio tasks espaco cpu memoria bateria wlan eth calendario 
-;modules-center = mpd
+modules-left = bateria tasks espaco cpu memoria pulseaudio xwindow
+modules-right = cmus calendario 
+modules-center = i3
 
 ; TRAY
 tray-position = right
@@ -97,13 +98,22 @@ cursor-scroll = ns-resize
 ;monitor = ${env:MONITOR:HDMI-1}
 inherit = section/base
 width = 99.1%
-height = 20
+height = 27
 offset-x = 8
-offset-y = 6
+offset-y = 8
 radius = 0.0
 fixed-center = true
-background = ${colors.background}
-foreground = ${colors.foreground}
+;background = ${colors.background}
+background = #00111111 
+#inherit = section/base
+#width = 99.1%
+#height = 20
+#offset-x = 8
+#offset-y = 6
+#radius = 0.0
+#fixed-center = true
+#background = ${colors.background}
+#foreground = ${colors.foreground}
 
 ; UNDERLINES
 line-size = 2
@@ -122,17 +132,17 @@ module-margin-left = 1
 module-margin-right = 2
 
 ; FONTS
-font-0 = fixed:pixelsize=10;1
+font-0 = fixed:pixelsize=11;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-font-3 = FontAwesome5Free:style=Solid:size=10;1
-font-4 = FontAwesome5Free:style=Regular:size=10;1
-font-5 = FontAwesome5Brands:style=Regular:size=10;1
+font-2 = siji:pixelsize=11;1
+font-3 = Font Awesome 6 Free,Font Awesome 6 Free Regular:style=Regular:size=12;1
+font-4 = Font Awesome 6 Brands Regular:style=Regular:size=12;1
+font-5 = Font Awesome 6 Free Solid:style=Solid:size=12;1
 
 ; MODULES POSITIONS
-modules-left = i3 xwindow
-modules-right = cmus pulseaudio tasks espaco cpu memoria bateria wlan eth calendario 
-;modules-center = mpd
+modules-left = bateria tasks espaco cpu memoria pulseaudio xwindow
+modules-right = cmus calendario 
+modules-center = i3
 
 ; TRAY
 ; tray-position = right
@@ -167,23 +177,26 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %name%
+;label-focused = %name%
+label-focused = 
 label-focused-background = ${colors.primary}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %name%
+;label-unfocused = %name%
+label-unfocused = 
 label-unfocused-padding = 2
+label-unfocused-background = ${colors.background}
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %name%
+label-visible = 
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %name%
+label-urgent =  
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
@@ -199,7 +212,9 @@ label = |     %title:0:30:...%
 type = custom/script
 exec = . ~/Documentos/scripts/cmusPlaying.sh
 interval = 1
-format-underline= ${colors.secondary}
+format-background = ${colors.background} 
+format-padding = 2
+format-underline= ${colors.primary}
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -233,45 +248,61 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = custom/script
 exec = . ~/Documentos/scripts/nTasks.sh
 interval = 5
-format-prefix = " Tasks: "
+format-prefix = " : "
 ;format-underline= ${colors.secondary}
+format-background = ${colors.background} 
+format-padding = 2
+format-underline= ${colors.primary}
 
 [module/espaco]
 type = custom/script
 exec = . ~/Documentos/scripts/disk.sh
 interval = 60
-format-prefix = " Espaço: "
+format-prefix = " : "
 ;format-underline= ${colors.secondary}
+format-background = ${colors.background} 
+format-padding = 2
+format-underline= ${colors.primary}
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " CPU: "
+format-prefix = " : "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline= ${colors.secondary}
 label = %percentage:2%%
+format-background = ${colors.background} 
+format-padding = 2
+format-underline= ${colors.primary}
 
 [module/memoria]
 type = custom/script
 exec = . ~/Documentos/scripts/memBlock.sh
 interval = 5
-format-prefix = " Mem: "
+format-prefix = " : "
 ;format-underline= ${colors.secondary}
 click-left = notify-send "$(ps axch -o cmd:15,%mem --sort=-%mem | head)" 
+format-background = ${colors.background} 
+format-padding = 2
+format-underline= ${colors.primary}
 
 [module/bateria]
 type = custom/script
 exec = . ~/Documentos/scripts/bateria.sh
-format-prefix = " Bat: "
+format-prefix = " : "
 interval = 5
+format-background = ${colors.background} 
+format-padding = 2
+format-underline= ${colors.primary}
 
 [module/calendario]
 type = custom/script
 exec = . ~/Documentos/scripts/dataBlockPolybar.sh
 interval = 30
-format-background= ${colors.primary}
-format-padding = 2
 click-left = notify-send "$(cal)"
+format-background = ${colors.background} 
+format-padding = 2
+format-underline= ${colors.primary}
 
 [module/xkeyboard]
 type = internal/xkeyboard
