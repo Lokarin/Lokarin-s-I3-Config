@@ -49,6 +49,9 @@ bindsym $mod+shift+t exec ./Documentos/scripts/touhouSelect.sh
 # Run Browser Selector
 bindsym $mod+shift+n exec ~/bin/navegadores
 
+# Run Webapp Selector
+bindsym $mod+shift+w exec ~/bin/webapps
+
 ## Run simOuNao(Reboot)
 #bindsym $mod+shift+x exec ./bin/simOuNao Reiniciar? reboot
 #
@@ -428,7 +431,7 @@ new_window pixel 2
 new_float none
 
 # Start compositor
-exec_always picom 
+#exec_always picom 
 
 # Start Dunst (Notifications)
 exec_always dunst 
@@ -443,4 +446,7 @@ exec_always nm-applet
 exec_always ./bin/pywaltic
 
 # Run optimus-manager-qt
-exec_always optimus-manager-qt
+#exec_always optimus-manager-qt
+
+# Run Kde Polkit 
+exec_always ./../../../usr/lib/polkit-kde-authentication-agent-1
