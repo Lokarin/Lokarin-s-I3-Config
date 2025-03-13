@@ -22,7 +22,8 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+shift+v exec pavucontrol
 
 # Launch Dolphin
-bindsym $mod+shift+a exec dolphin
+#bindsym $mod+shift+a exec dolphin
+bindsym $mod+shift+a exec thunar
 
 # Launch Librewolf
 bindsym $mod+shift+f exec librewolf
@@ -274,7 +275,7 @@ hide_edge_borders both
 # Gaps
 gaps inner 8
 gaps outer 0
-gaps top 34
+gaps top 37
 smart_borders on
 smart_borders no_gaps
 #smart_gaps on
@@ -427,11 +428,13 @@ mode "$mode_gaps_left" {
 ### START WITH i3 ### 
 
 # Set windows borders
-new_window pixel 2
+#new_window pixel 7
 new_float none
 
+default_border pixel 0 
+
 # Start compositor
-#exec_always picom 
+exec_always picom 
 
 # Start Dunst (Notifications)
 exec_always dunst 
@@ -446,7 +449,7 @@ exec_always nm-applet
 exec_always ./bin/pywaltic
 
 # Run optimus-manager-qt
-#exec_always optimus-manager-qt
+exec_always optimus-manager-qt
 
 # Run Kde Polkit 
 exec_always ./../../../usr/lib/polkit-kde-authentication-agent-1
