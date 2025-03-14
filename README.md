@@ -1,13 +1,14 @@
 # Chameleon i3
-![](Screenshots/i3camaleon.png)
+![](Screenshots/i3camaleon.jpg)
 
 ![](Screenshots/meui3a.gif)
 
-![](Screenshots/presetation.png)
+![](Screenshots/presetation.jpg)
 
 # - Requirements
-  - i3-gaps;
+  - i3-wm;
   - pywal;
+  - polybar;
   - picom;
   - Some of my [Scripts](https://github.com/Lokarin/myBashScripts);
-  - Fonts: [YosemiteSanFranciscoFont](https://github.com/supermarin/YosemiteSanFranciscoFont), Font Awesome;
+  - Fonts: Font Awesome, Yosemite, Ninbus Roman
