@@ -3,7 +3,7 @@
 
 ![](Screenshots/meui3a.gif)
 
-![](Screenshots/presetation.jpg)
+![](Screenshots/presentation.jpg)
 
 # - Requirements
   - i3-wm;
