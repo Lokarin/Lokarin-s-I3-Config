@@ -6,9 +6,44 @@ Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'lewis6991/gitsigns.nvim'
-Plug 'famiu/feline.nvim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'm4xshen/autoclose.nvim'
 call plug#end()
 ]]
+
+-- Comando de alinhamento para .asm
+vim.api.nvim_create_user_command("AlignASM", function()
+  local start_line = vim.fn.line("'<")
+  local end_line = vim.fn.line("'>")
+  local lines = vim.api.nvim_buf_get_lines(0, start_line - 1, end_line, false)
+
+  -- Extrai comandos e argumentos
+  local split_lines = {}
+  local max_cmd_len = 0
+
+  for _, line in ipairs(lines) do
+    local cmd, args = line:match("^%s*(%S+)%s*(.*)")
+    if cmd then
+      table.insert(split_lines, {cmd = cmd, args = args})
+      max_cmd_len = math.max(max_cmd_len, #cmd)
+    else
+      table.insert(split_lines, {cmd = "", args = line})
+    end
+  end
+
+  -- Reconstroi com alinhamento
+  local aligned = {}
+  for _, entry in ipairs(split_lines) do
+    if entry.cmd ~= "" then
+      table.insert(aligned, string.format("%-" .. max_cmd_len .. "s %s", entry.cmd, entry.args))
+    else
+      table.insert(aligned, entry.args)
+    end
+  end
+
+  vim.api.nvim_buf_set_lines(0, start_line - 1, end_line, false, aligned)
+end, {range = true})
+
 
 -- Configurações gerais
 vim.cmd [[
@@ -21,7 +56,26 @@ set wildmode=longest,list,full
 set ttyfast
 set lazyredraw
 set termguicolors
+set autoindent
+set smartindent
+filetype plugin indent on
 ]]
+
+-- Configuração autoclose
+require("autoclose").setup({
+   --keys = {
+   --   ["$"] = { escape = true, close = true, pair = "$$", disabled_filetypes = {} },
+   --},
+})
+
+-- Configuração lualine
+require('lualine').setup {
+  options = {
+    theme = 'auto',
+    component_separators = { left = '|', right = '|'},
+    section_separators = { left = '', right = ''},
+  }
+}
 
 -- Configuração do indent-blankline
 require("ibl").setup({
@@ -32,9 +86,6 @@ require("ibl").setup({
         enabled = true
     }
 })
-
--- Configuração feline
-require('feline').setup()
 
 -- Configuração gitsigns
 require('gitsigns').setup {
